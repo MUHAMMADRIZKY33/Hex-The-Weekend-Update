@@ -47,6 +47,9 @@ class TitleState extends MusicBeatState
 	var wackyImage:FlxSprite;
 
 	override public function create():Void
+        #if android
+        FlxG.android.preventDefaultKeys = [BACK];
+        #end
 	{
 		MasterObjectLoader.mutex = new Mutex();
 		// TODO: Refactor this to use OpenFlAssets.
